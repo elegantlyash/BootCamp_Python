@@ -552,7 +552,7 @@ book3 = Book("The Bench","Jhumpa",True)
 book1.display_info()
 book2.display_info()
 book3.display_info()
-'''
+
 class BankAccount:
     def __init__(self,balance=0):
         self.balance=balance
@@ -572,7 +572,29 @@ class BankAccount:
             
 s = BankAccount(int(input("Enter your current balance")))
 d = input("Select opperation (Deposit(d)/Withdraw(w))")
+
 if d.lower() == "d":
     s.deposit(int(input("Enter Amount")))
 elif d.lower() == "w":
     s.withdraw(int(input("Enter Amount")))
+'''
+class Rectangle:
+    def __init__(self,length=2,breadth=3):
+        self.length=length
+        self.breadth=breadth
+
+    def area(self):
+        print(f"Area when lenght is {self.length} breadth is {self.breadth} and area is" , self.length*self.breadth)
+
+    def perimeter(self):
+        print(f"Area when lenght is {self.length} breadth is {self.breadth} and perimeter is", 2*(self.length+self.breadth))
+l = int(input("Enter length"))
+b = int(input("Enter breadth"))
+r = Rectangle()
+d = input("Select opperation (Area(a)/Perimeter(p))")
+if d.lower() == "a":
+    r.area()
+else:
+    r.perimeter()
+    
+
