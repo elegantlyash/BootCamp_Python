@@ -599,7 +599,7 @@ if d.lower() == "a":
 else:
     r.perimeter()
 '''
-#Date : 22.06.2026
+#Date : 23.06.2026
 class Ticket:
     def __init__(self,movie,seats_available,seats_requested):
         self.movie=movie
