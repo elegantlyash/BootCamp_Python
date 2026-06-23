@@ -577,7 +577,7 @@ if d.lower() == "d":
     s.deposit(int(input("Enter Amount")))
 elif d.lower() == "w":
     s.withdraw(int(input("Enter Amount")))
-'''
+
 class Rectangle:
     def __init__(self,length=2,breadth=3):
         self.length=length
@@ -588,13 +588,31 @@ class Rectangle:
 
     def perimeter(self):
         print(f"Area when lenght is {self.length} breadth is {self.breadth} and perimeter is", 2*(self.length+self.breadth))
+
 l = int(input("Enter length"))
 b = int(input("Enter breadth"))
 r = Rectangle()
 d = input("Select opperation (Area(a)/Perimeter(p))")
 if d.lower() == "a":
+
     r.area()
 else:
     r.perimeter()
-    
+'''
+#Date : 22.06.2026
+class Ticket:
+    def __init__(self,movie,seats_available,seats_requested):
+        self.movie=movie
+        self.seats_available=seats_available
+        self.seats_requested=seats_requested
+    def confirmed(self):
+        if self.seats_requested<=self.seats_available:
+            print(f"Your ticket for {self.movie} is confirmed")
+        else:
+            print(f"Sorry, your ticket for {self.movie} is not confirmed")
+s = Ticket(input("Enter movie name: "),int(input("Enter available seats: ")),int(input("Enter requested seats: ")))
+s.confirmed()           
+        
+
+
 
