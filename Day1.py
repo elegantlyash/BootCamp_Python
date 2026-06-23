@@ -598,8 +598,9 @@ if d.lower() == "a":
     r.area()
 else:
     r.perimeter()
-'''
+
 #Date : 22.06.2026
+
 class Ticket:
     def __init__(self,movie,seats_available,seats_requested):
         self.movie=movie
@@ -609,10 +610,37 @@ class Ticket:
         if self.seats_requested<=self.seats_available:
             print(f"Your ticket for {self.movie} is confirmed")
         else:
-            print(f"Sorry, your ticket for {self.movie} is not confirmed")
-s = Ticket(input("Enter movie name: "),int(input("Enter available seats: ")),int(input("Enter requested seats: ")))
-s.confirmed()           
+            print(f"Sorry, your ticket for {self.movie} is not confirme)
+Ticket(input("Enter movie name: "),int(input("Enter available seats: ")),int(input("Enter requested seats: "))).confirmed()
+
+class Employee:
+    def __init__(self,name,department="General",bonus=0):
+        self.name=name
+        self.department=department
+        self.bonus=bonus
+    def annual_summary(self,salary=30000):
+        salary+=self.bonus
+        print(f"{self.name} of {self.department} department has salary {salary} including bonus of {self.bonus}.")
+Employee("Yash","Technical",3000).annual_summary(1000000)
+Employee("Rohan","Designing",10).annual_summary()
+Employee("Alex").annual_summary()
+'''
+class Product:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
         
+    def total_value(self):
+        return self.price * self.quantity
 
+    def display_product_details(self):
+        l = [self.name, self.price, self.quantity]
+        print(f"Product Data List: {l}")
+        print(f"Calculated Total Value inside method: {self.total_value()}")
 
-
+Product("Laptop", 50000, 2).display_product_details()  
+Product("Smartphone", 20000, 3).display_product_details()
+p=Product("Tablet", 15000, 4)
+p.display_product_details()
+print(f"Direct call to total_value(): {p.total_value()}")
