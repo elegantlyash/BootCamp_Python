@@ -671,7 +671,7 @@ print(Employee.get_count())
 # KRM Corp has 2 employees
 
 print(Employee.validate_dept("CSE")) # True
-'''
+
 class Student:
     total_students = 0
     def __init__(self, roll_no, marks_list):
@@ -718,4 +718,30 @@ s2 = Student("22", [70, 75, 80])
 print("GPA:", s2.gpa)       
 print("Grade:", s2._grade)
 print("Total Students:", Student.count())
-    
+'''
+#inheritance
+class A:
+    def __init__(self):
+        print("class A is called")
+class B(A):
+    def __init__(self):
+        print("Class B is called")
+        super().__init__()
+class C(B):
+    def __init__(self):
+        print("Class C is called")
+        super().__init__()
+        
+c = C()
+
+
+
+
+
+
+
+
+
+
+        
+
