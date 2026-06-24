@@ -624,7 +624,7 @@ class Employee:
 Employee("Yash","Technical",3000).annual_summary(1000000)
 Employee("Rohan","Designing",10).annual_summary()
 Employee("Alex").annual_summary()
-'''
+
 class Product:
     def __init__(self, name, price, quantity):
         self.name = name
@@ -644,3 +644,78 @@ Product("Smartphone", 20000, 3).display_product_details()
 p=Product("Tablet", 15000, 4)
 p.display_product_details()
 print(f"Direct call to total_value(): {p.total_value()}")
+#date : 24.06.2026
+
+class Employee:
+    company = "KRM Corp"       # class variable
+    _count = 0                 # protected class variable
+    
+    def __init__(self, name, dept):
+        self.name = name
+        self.dept = dept
+        Employee._count += 1
+        
+    @classmethod               # receives class, not instance
+    def get_count(cls):
+        return f"{cls.company} has {cls._count} employees"
+        
+    @staticmethod              # no cls or self - pure utility
+    def validate_dept(dept):
+        valid = ["CSE", "ECE", "MBA", "MCA"]
+        return dept in valid
+
+e1 = Employee("Alice", "CSE")
+e2 = Employee("Bob",   "ECE")
+
+print(Employee.get_count()) 
+# KRM Corp has 2 employees
+
+print(Employee.validate_dept("CSE")) # True
+'''
+class Student:
+    total_students = 0
+    def __init__(self, roll_no, marks_list):
+        self.__roll_no = roll_no
+        self.__marks = []
+        self._grade = "Pending"      
+        self.gpa = marks_list
+        Student.total_students += 1
+
+    @property
+    def gpa(self):
+        avg = sum(self.__marks) / len(self.__marks)
+        return avg / 10
+    
+    @gpa.setter
+    def gpa(self, marks_list):
+        for m in marks_list:
+            if m < 0 or m > 100:
+                print("Error: Marks should be between 0 and 100")
+                return
+        self.__marks = marks_list
+        
+       
+        c_gpa = self.gpa
+        if c_gpa >= 9:
+            self._grade = "A"
+        elif c_gpa >= 7.5:
+            self._grade = "B"
+        elif c_gpa >= 5:
+            self._grade = "C"
+        else:
+            self._grade = "D"
+
+    @classmethod
+    def count(cls):
+        return cls.total_students
+
+
+s1 = Student("21", [80, 90, 85])
+print("GPA:", s1.gpa)
+print("Grade:", s1._grade)
+print("Total Students:", Student.count())
+s2 = Student("22", [70, 75, 80])
+print("GPA:", s2.gpa)       
+print("Grade:", s2._grade)
+print("Total Students:", Student.count())
+    
